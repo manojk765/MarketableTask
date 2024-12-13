@@ -44,7 +44,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="py-20 bg-gradient-to-b from-green-950 via-gray-900 to-black w-full relative z-[10]">
+    <div className="py-20 bg-gradient-to-b from-[#1a223a] via-gray-900 to-black w-full relative z-[10]">
       <h1 className="text-center text-4xl font-bold text-gray-100 mb-10">
         Why should you Buy <span className="text-purple-400">This course?</span>
       </h1>

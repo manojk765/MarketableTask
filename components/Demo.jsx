@@ -2,14 +2,14 @@
 
 import React, { useState } from 'react';
 import YouTube from 'react-youtube';
-import { FaPlay } from 'react-icons/fa'; // Importing play icon from React Icons
+import { FaPlay } from 'react-icons/fa';  
 
 export default function YoutubeVideo() {
-  const [isPlaying, setIsPlaying] = useState(false); // Track if the video is playing
+  const [isPlaying, setIsPlaying] = useState(false);  
 
   const opts = {
     playerVars: {
-      autoplay: 1, // Video starts automatically when the image is clicked
+      autoplay: 1,  
     },
   };
 

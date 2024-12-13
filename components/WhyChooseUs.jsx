@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from "react";
+import React from "react";
 import { Button } from "./Animations/MovingBorders";
 
 const features = [
@@ -13,25 +13,25 @@ const features = [
   {
     id: 2,
     thumbnail: '/assets/features/2.png',
-    title: 'Expert Guidance:',
+    title: 'Expert Guidance',
     desc: "You'll benefit from experts' knowledge, simplifying complex topics and guiding you through every step in a straightforward manner.",
   },
   {
     id: 3,
     thumbnail: '/assets/features/3.png',
-    title: 'Practical Learning:',
+    title: 'Practical Learning',
     desc: "Dive into real-life examples and exercises, gaining hands-on experience that builds your confidence for actual trading.",
   },
   {
     id: 4,
     thumbnail: '/assets/features/4.png',
-    title: 'Stay Safe:',
+    title: 'Stay Safe',
     desc: "Discover essential risk management tips, ensuring you can make informed decisions while navigating the ups and downs of crypto markets.",
   },
   {
     id: 5,
     thumbnail: '/assets/features/5.png',
-    title: 'Premium Community Access:',
+    title: 'Premium Community Access',
     desc: "Lifetime free access to our exclusive members-only Discord Community section and Telegram channel where our Master traders post their Technical Analysis.",
   },
   {
@@ -44,7 +44,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="py-20 bg-gray-900 w-full relative z-[10]">
+    <div className="py-20 bg-gradient-to-b from-black via-gray-900 to-green-950 w-full relative z-[10]">
       <h1 className="text-center text-4xl font-bold text-gray-100 mb-10">
         Why should you Buy <span className="text-purple-400">This course?</span>
       </h1>
@@ -56,9 +56,9 @@ const WhyChooseUs = () => {
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius="1.25rem"
             style={{
-              background: "#1f2937",  
+              background: "#1f2937",
               borderRadius: "1.25rem",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",  
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
             }}
             className="relative flex-1 p-6 rounded-lg border border-gray-700 transition-transform transform-gpu duration-300 ease-in-out hover:-translate-y-2 hover:scale-105 hover:shadow-xl"
           >
@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
                 alt={card.title}
                 className="w-24 h-24 mb-4 rounded-lg object-cover"
               />
-              <div className="md:flex md:flex-col">
+              <div className="flex flex-col">
                 <h2 className="text-xl font-semibold text-gray-100 text-center mb-2">
                   {card.title}
                 </h2>
@@ -82,4 +82,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs ;
+export default WhyChooseUs;

@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const AccordionItem = ({ question, answer }) => {
+const AccordionItem = ({ question, answer, index }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -10,12 +10,14 @@ const AccordionItem = ({ question, answer }) => {
   };
 
   return (
-    <div className="py-6 border-b border-gray-300 dark:border-gray-600 ">
+    <div className="py-6 border-b border-gray-700">
       <div
         className="flex items-center justify-between cursor-pointer"
         onClick={toggleAccordion}
+        aria-expanded={isOpen}
+        aria-controls={`accordion-answer-${index}`}
       >
-        <span className="flex-1 text-xl font-semibold text-gray-900 dark:text-gray-100">{question}</span>
+        <span className="flex-1 text-xl font-semibold text-gray-100">{question}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -27,7 +29,7 @@ const AccordionItem = ({ question, answer }) => {
           strokeLinecap="round"
           strokeLinejoin="round"
           className={`transition-transform duration-300 ${
-            isOpen ? 'transform rotate-45 text-cyan-500 dark:text-cyan-300' : 'text-gray-500 dark:text-gray-400'
+            isOpen ? 'transform rotate-45 text-cyan-400' : 'text-gray-500'
           }`}
         >
           <line x1="12" y1="5" x2="12" y2="19" />
@@ -36,31 +38,30 @@ const AccordionItem = ({ question, answer }) => {
       </div>
 
       <div
+        id={`accordion-answer-${index}`}
         className={`mt-4 overflow-hidden transition-all duration-500 ease-in-out ${
           isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <p className="text-gray-600 dark:text-gray-400 mt-2">{answer}</p>
+        <p className="text-gray-300 mt-2">{answer}</p>
       </div>
     </div>
   );
 };
 
 function FAQ() {
-  
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#111827] to-[#1b263b] py-20 relative z-10 ">
+    <div className="min-h-screen bg-gradient-to-b from-[#111827] to-[#1b263b] py-20 relative z-10">
       <div className="container mx-auto px-6 max-w-4xl">
-        
-        <h2 className="text-center text-5xl font-extrabold text-gray-900 dark:text-gray-100 leading-tight">
+        <h2 className="text-center text-5xl font-extrabold text-gray-100 leading-tight">
           Frequently Asked Questions
         </h2>
-        <p className="text-center text-lg text-gray-600 dark:text-gray-400 mt-4">
+        <p className="text-center text-lg text-gray-300 mt-4">
           Everything you need to know about our services
         </p>
-        <div className="mt-12 bg-white dark:bg-[#1b263b] rounded-lg shadow-lg p-8">
+        <div className="mt-12 bg-[#1b263b] rounded-lg shadow-lg p-8">
           {items.map(({ question, answer }, index) => (
-            <AccordionItem key={index} question={question} answer={answer} />
+            <AccordionItem key={index} index={index} question={question} answer={answer} />
           ))}
         </div>
       </div>

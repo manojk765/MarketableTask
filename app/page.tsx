@@ -6,16 +6,20 @@ import Team from '../components/TeamSection.jsx';
 import Features from '../components/WhyChooseUs.jsx';
 import Demo from '../components/Demo.jsx';
 import Course from '../components/Courses.jsx';
-import Numbers from '../components/Numbers.jsx'
+// import Numbers from '../components/Numbers.jsx';
+import NavBar from '../components/Nav.jsx' ;
+import Hero from  '../components/Hero.jsx'
 
 export default function Home() {
   return (
     <>
-      <Numbers/>
+      <NavBar/>
+      <Hero/>
+      {/* <Numbers/> */}
       <Features />
       <Demo />
       <Course />
-      <Team />
+      <Team /> 
       <Reviews />
       <FAQ />
       <Contact />

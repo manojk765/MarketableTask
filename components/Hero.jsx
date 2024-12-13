@@ -62,7 +62,7 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-600/10"
+                className="border-green-600 text-green-600 hover:bg-gray-800 hover:text-white "
               >
                 Watch Demo
               </Button>

@@ -36,7 +36,7 @@ const CoursesGrid = () => {
   const [hoveredCourse, setHoveredCourse] = useState(null)
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 bg-[#111827]">
+    <div className="grid grid-cols-1 relative z-[10] md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 bg-[#111827]">
       {courses.map((course) => (
         <CourseCard
           key={course.id}

@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius="1.25rem"
             style={{
-              background: "#1f2937",
+              background: "#2f3b48",
               borderRadius: "1.25rem",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
             }}

@@ -46,7 +46,7 @@ const Nav = () => {
     >
       <nav className="flex justify-between items-center max-container p-4">
         <a href="/" className='bg-white'>
-          <img src="/assets/Nav/LOGO_BLUE.png" alt="Logo" width={130} style={{ height: 'auto', maxHeight: '20px' }} />
+          <img src="/assets/Nav/LOGO_BLUE.png" alt="Logo" width={130} style={{ height: 'auto', maxHeight: '25px' }} />
         </a>
 
         <ul className="hidden lg:flex justify-center gap-16 text-[#F3F4F6]">

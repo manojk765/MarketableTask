@@ -2,14 +2,15 @@
 
 import React, { useState } from 'react';
 import YouTube from 'react-youtube';
-import { FaPlay } from 'react-icons/fa';  
+import { FaPlay } from 'react-icons/fa';
 
 export default function YoutubeVideo() {
-  const [isPlaying, setIsPlaying] = useState(false);  
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const opts = {
     playerVars: {
-      autoplay: 1,  
+      autoplay: 1,
+      controls: 1,
     },
   };
 
@@ -18,7 +19,7 @@ export default function YoutubeVideo() {
   };
 
   return (
-    <div className="relative z-[10] bg-gray-900 flex flex-col gap-6 justify-center items-center py-10">
+    <div className="relative z-10 bg-gradient-to-b from-[#00D084] via-[#3A6073] to-[#000]  flex flex-col gap-6 justify-center items-center py-10">
       <div className="text-center text-3xl md:text-5xl text-white p-4">
         <h1>What would you like to learn today?</h1>
       </div>
@@ -29,10 +30,10 @@ export default function YoutubeVideo() {
             <img
               src="/assets/Demo/youtube.jpg"
               alt="Play video"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg transition-transform transform hover:scale-105"
             />
             <div className="absolute inset-0 flex justify-center items-center">
-              <div className="bg-white text-black p-4 rounded-full">
+              <div className="bg-white text-black p-4 rounded-full shadow-lg">
                 <FaPlay className="h-8 w-8" />
               </div>
             </div>
@@ -40,17 +41,12 @@ export default function YoutubeVideo() {
         ) : (
           <YouTube
             videoId="8llyUyGxrT4"
-            opts={{
-              ...opts,
-              width: '100%',
-              height: '100%',
-            }}
+            opts={opts}
             className="w-full h-full rounded-lg"
             onReady={_onReady}
           />
         )}
       </div>
-
     </div>
   );
 

@@ -70,7 +70,7 @@ const Footer = () => {
           {footerLinks.map((section) => (
             <div key={section.title}>
               <h4 className="text-white font-montserrat text-xl md:text-2xl leading-normal font-medium mb-6">{section.title}</h4>
-              <ul className="text-center max-sm:text-left">
+              <ul className="text-left max-sm:text-left">
                 {section.links.map((link) => (
                   <li
                     key={link.name}
@@ -86,14 +86,14 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-800 mt-12 pt-6">
-        <div className="flex justify-between text-gray-400 text-sm flex-wrap max-sm:flex-col max-sm:items-center max-sm:gap-4">
-          <div className="flex items-center gap-2">
+        <div className="flex justify-center text-gray-400 text-sm flex-wrap max-sm:flex-col max-sm:items-center max-sm:gap-4 text-center">
+          <div className="flex items-center gap-2 justify-center">
             <FaRegCopyright width={20} height={20} className="text-gray-500" />
             <p>Copyright. All rights reserved.</p>
           </div>
-          <p className="cursor-pointer hover:text-gray-200">Terms & Conditions</p>
         </div>
       </div>
+
     </footer>
   );
 };

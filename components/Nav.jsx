@@ -1,61 +1,60 @@
-'use client'
+'use client';
 
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useState, useEffect } from "react";
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { useState, useEffect } from 'react';
 
 export const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about-us", label: "About Us" },
-  { href: "#products", label: "Products" },
-  { href: "#contact-us", label: "Contact Us" },
+  { href: '#home', label: 'Home' },
+  { href: '#about-us', label: 'About Us' },
+  { href: '#products', label: 'Products' },
+  { href: '#contact-us', label: 'Contact Us' },
 ];
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);  
-  const [isVisible, setIsVisible] = useState(true); // Track visibility of navbar
-  const [lastScrollY, setLastScrollY] = useState(0); // Track last scroll position
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);  
+    setIsOpen(!isOpen);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setIsVisible(false); // Hide navbar when scrolling down
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Hide the navbar when scrolling down and passed 100px
+        setIsVisible(false);
       } else {
-        setIsVisible(true);  // Show navbar when scrolling up
+        // Show the navbar when scrolling up
+        setIsVisible(true);
       }
-      setLastScrollY(window.scrollY); // Update last scroll position
+      setLastScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [lastScrollY]); // Dependency on lastScrollY
+  }, [lastScrollY]);
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-10 transition-all ease-in-out duration-300 ${isVisible ? "opacity-100" : "opacity-0"} ${isVisible ? "pointer-events-auto" : "pointer-events-none"} bg-transparent shadow-md`}
+      className={`fixed top-0 left-0 w-full z-20 transition-transform duration-500 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } bg-gradient-to-b from-[#1f2937] via-[#1f2937] to-[#1f2937] shadow-lg`}
     >
       <nav className="flex justify-between items-center max-container p-4">
-        <a href="/">
-          <img
-            src="/assets/Nav/LOGO_BLUE.png"
-            alt="Logo"
-            width={130}
-            height={15}
-          />
+        <a href="/" className='bg-white'>
+          <img src="/assets/Nav/LOGO_BLUE.png" alt="Logo" width={130} height={15} />
         </a>
 
-        <ul className="hidden lg:flex justify-center gap-16 text-white">
+        <ul className="hidden lg:flex justify-center gap-16 text-[#F3F4F6]">
           {navLinks.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className="font-montserrat text-lg text-slate-gray"
+                className="font-montserrat text-lg hover:text-[#6EE7B7] transition-colors duration-200"
               >
                 {item.label}
               </a>
@@ -67,18 +66,18 @@ const Nav = () => {
           <GiHamburgerMenu
             width={25}
             height={25}
-            className="cursor-pointer"
+            className="cursor-pointer text-[#F3F4F6]"
             onClick={toggleMenu}
           />
         </div>
 
         {isOpen && (
-          <ul className="absolute top-full left-0 w-full bg-white flex flex-col items-center shadow-lg lg:hidden z-20">
+          <ul className="absolute top-full left-0 w-full bg-[#1f2937] flex flex-col items-center shadow-lg lg:hidden z-20">
             {navLinks.map((item) => (
               <li key={item.label} className="py-4 w-full text-center">
                 <a
                   href={item.href}
-                  className="font-montserrat text-lg text-slate-gray"
+                  className="font-montserrat text-lg text-[#F3F4F6] hover:text-[#6EE7B7] transition-colors duration-200"
                 >
                   {item.label}
                 </a>

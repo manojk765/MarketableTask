@@ -21,7 +21,7 @@ function ReviewCard({ content, imgSrc, name, company, rating }) {
   };
 
   return (
-    <div className="bg-gray-900 dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 min-h-[350px] min-w-[320px] lg:min-w-[420px]">
+      <div className="bg-gradient-to-tr from-[#25292e] to-[#21252a] p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300  min-w-[320px] lg:min-w-[420px]">  
       <div className="flex items-center gap-1 mb-4">
         {renderStars()}
       </div>

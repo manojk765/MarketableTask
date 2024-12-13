@@ -106,7 +106,7 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="bg-[#111827] p-4 w-full relative z-[10] overflow-hidden py-12 ">
+    <div className=" bg-gradient-to-b from-[#18181b] via-gray-900 to-[#111827] p-4 w-full relative z-[10] overflow-hidden py-12 ">
       <h2 className="text-2xl md:text-3xl font-semibold text-white mt-8 mb-6">
         What Our Customers Say..!
       </h2>

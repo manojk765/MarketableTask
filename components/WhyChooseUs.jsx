@@ -56,10 +56,10 @@ const WhyChooseUs = () => {
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius="1.25rem"
             style={{
-              background: "rgba(255, 255, 255, 0.1)", // slight transparency
+              background: "rgba(255, 255, 255, 0.1)",  
               borderRadius: "1.25rem",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
-              backdropFilter: "blur(10px)", // frosted glass effect
+              backdropFilter: "blur(10px)",  
               position: "relative",
               overflow: "hidden",
             }}

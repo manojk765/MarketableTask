@@ -38,7 +38,7 @@ export default function TeamSection() {
         <h2 className="text-center text-4xl font-bold tracking-wider text-white mb-12">
           MEET THE TEAM
         </h2>
-        {/* Flexbox for team cards, with responsive grid */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-8 justify-start md:justify-center">
           {teamMembers.map((member, index) => (
             <TeamCard key={index} member={member} />

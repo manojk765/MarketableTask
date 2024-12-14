@@ -11,7 +11,7 @@ function ReviewCard({ content, imgSrc, name, company, rating }) {
           viewBox="0 0 24 24"
           width="20"
           height="20"
-          fill={i <= rating ? '#ffcc00' : '#4b5563'} // Gold for filled stars, gray for empty stars
+          fill={i <= rating ? '#ffcc00' : '#4b5563'}  
         >
           <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
         </svg>
@@ -25,7 +25,6 @@ function ReviewCard({ content, imgSrc, name, company, rating }) {
       {/* Glassmorphism background */}
       <div className="absolute inset-0 bg-white/10 rounded-xl blur-md"></div>
 
-      {/* Review card content */}
       <div className="relative z-10">
         <div className="flex items-center gap-1 mb-4">
           {renderStars()}

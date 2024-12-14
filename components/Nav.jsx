@@ -31,7 +31,6 @@ const Nav = () => {
         setIsVisible(true);
       }
 
-      // Check if scrolled past the Hero section
       if (window.scrollY > heroHeight) {
         setIsTransparent(false);
       } else {

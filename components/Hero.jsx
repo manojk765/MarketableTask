@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import dynamic from 'next/dynamic'
-import { useState, useRef, useEffect } from "react" // <-- Added useEffect import
-import CountUp from 'react-countup' // Ensure this import is present for CountUp functionality
+import { useState, useRef, useEffect } from "react"  
+import CountUp from 'react-countup'  
+
 // const DynamicMoneyScene = dynamic(() => import('./MoneyScene').then(mod => mod.MoneyScene), {
 //   ssr: false,
 //   loading: () => <div className="h-full w-full absolute inset-0 -z-10 bg-black" />

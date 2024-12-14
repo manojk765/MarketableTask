@@ -59,19 +59,19 @@ const Reviews = () => {
     const cards = cardRefs.current;
 
     if (slider && cards.length > 0) {
-      // Calculate the total width of all cards
+
       const totalWidth = cards.reduce((acc, card) => acc + card.offsetWidth, 0);
 
-      // Clone the cards and append them to create a circular effect
+
       cards.forEach((card) => {
         const clone = card.cloneNode(true);
         slider.appendChild(clone);
       });
 
-      // Set the initial position
+
       gsap.set(slider, { x: 0 });
 
-      // Create the animation (right to left)
+
       animationRef.current = gsap.to(slider, {
         x: -totalWidth,
         duration: 30,
@@ -85,12 +85,12 @@ const Reviews = () => {
         },
       });
 
-      // Pause animation on hover
+
       slider.addEventListener('mouseenter', () => {
         animationRef.current.pause();
       });
 
-      // Resume animation when the mouse leaves
+
       slider.addEventListener('mouseleave', () => {
         animationRef.current.play();
       });

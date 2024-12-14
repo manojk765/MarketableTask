@@ -21,30 +21,36 @@ function ReviewCard({ content, imgSrc, name, company, rating }) {
   };
 
   return (
-      <div className="bg-gradient-to-tr from-[#25292e] to-[#21252a] p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300  min-w-[320px] lg:min-w-[420px]">  
-      <div className="flex items-center gap-1 mb-4">
-        {renderStars()}
-      </div>
+    <div className="relative p-6 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 min-w-[320px] lg:min-w-[420px] bg-white/10 backdrop-blur-lg">
+      {/* Glassmorphism background */}
+      <div className="absolute inset-0 bg-white/10 rounded-xl blur-md"></div>
 
-      <p className="text-gray-300 dark:text-gray-200 mb-6 leading-relaxed">
-        {content}
-      </p>
+      {/* Review card content */}
+      <div className="relative z-10">
+        <div className="flex items-center gap-1 mb-4">
+          {renderStars()}
+        </div>
 
-      <div className="flex items-center gap-4 mt-auto">
-        <figure className="rounded-full overflow-hidden w-12 h-12 border-2 border-gray-700">
-          <img
-            src={imgSrc}
-            alt={name}
-            width={48}
-            height={48}
-            loading="lazy"
-            className="object-cover w-full h-full"
-          />
-        </figure>
+        <p className="text-gray-300 dark:text-gray-200 mb-6 leading-relaxed">
+          {content}
+        </p>
 
-        <div>
-          <p className="text-gray-100 dark:text-white font-medium">{name}</p>
-          <p className="text-sm text-gray-400 dark:text-gray-500">{company}</p>
+        <div className="flex items-center gap-4 mt-auto">
+          <figure className="rounded-full overflow-hidden w-12 h-12 border-2 border-gray-700">
+            <img
+              src={imgSrc}
+              alt={name}
+              width={48}
+              height={48}
+              loading="lazy"
+              className="object-cover w-full h-full"
+            />
+          </figure>
+
+          <div>
+            <p className="text-gray-100 dark:text-white font-medium">{name}</p>
+            <p className="text-sm text-gray-400 dark:text-gray-500">{company}</p>
+          </div>
         </div>
       </div>
     </div>

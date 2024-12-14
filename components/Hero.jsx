@@ -6,10 +6,10 @@ import { motion } from "framer-motion"
 import dynamic from 'next/dynamic'
 import { useState, useRef, useEffect } from "react" // <-- Added useEffect import
 import CountUp from 'react-countup' // Ensure this import is present for CountUp functionality
-const DynamicMoneyScene = dynamic(() => import('./MoneyScene').then(mod => mod.MoneyScene), {
-  ssr: false,
-  loading: () => <div className="h-full w-full absolute inset-0 -z-10 bg-black" />
-})
+// const DynamicMoneyScene = dynamic(() => import('./MoneyScene').then(mod => mod.MoneyScene), {
+//   ssr: false,
+//   loading: () => <div className="h-full w-full absolute inset-0 -z-10 bg-black" />
+// })
 const numbers = [
   { id: 1, number: 5, title: "courses" },
   { id: 2, number: 100, title: "learning hours" },
@@ -36,8 +36,8 @@ export default function HeroSection() {
     }
   }, [])
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-[#1a223a] overflow-hidden">
-      <DynamicMoneyScene />
+    <div className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-[#1a223a] overflow-hidden pt-8 ">
+      {/* <DynamicMoneyScene /> */}
       <div className="container relative mx-auto px-10 py-10 sm:py-12">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div

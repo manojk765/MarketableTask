@@ -42,10 +42,10 @@ const Nav = () => {
     <header
       className={`fixed top-0 left-0 w-full z-20 transition-transform duration-500 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
-      } bg-gradient-to-b from-[#1f2937] via-[#1f2937] to-[#1f2937] shadow-lg`}
+      } bg-gradient-to-r from-[#1E293B] via-[#111827] to-[#1E293B] shadow-lg`} // Dark gradient background
     >
       <nav className="flex justify-between items-center max-container p-4">
-        <a href="/" className='bg-white'>
+        <a href="/" className="bg-white">
           <img src="/assets/Nav/LOGO_BLUE.png" alt="Logo" width={130} style={{ height: 'auto', maxHeight: '25px' }} />
         </a>
 

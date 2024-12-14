@@ -44,7 +44,7 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="py-20 bg-gradient-to-b from-[#1a223a] via-gray-900 to-black w-full relative z-[10]">
+    <div className="py-20 bg-gradient-to-b from-[#1a223a] via-[#1a223a] to-black w-full relative z-[10]">
       <h1 className="text-center text-4xl font-bold text-gray-100 mb-10">
         Why should you Buy <span className="text-purple-400">This course?</span>
       </h1>
@@ -56,13 +56,19 @@ const WhyChooseUs = () => {
             duration={Math.floor(Math.random() * 10000) + 10000}
             borderRadius="1.25rem"
             style={{
-              background: "#2f3b48",
+              background: "rgba(255, 255, 255, 0.1)", // slight transparency
               borderRadius: "1.25rem",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
+              backdropFilter: "blur(10px)", // frosted glass effect
+              position: "relative",
+              overflow: "hidden",
             }}
             className="relative flex-1 p-6 rounded-lg border border-gray-700 transition-transform transform-gpu duration-300 ease-in-out hover:-translate-y-2 hover:scale-105 hover:shadow-xl"
           >
-            <div className="flex flex-col md:flex-row items-center">
+            {/* Glassmorphism background */}
+            <div className="absolute inset-0 bg-white opacity-10 rounded-lg blur-md"></div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center">
               <img
                 src={card.thumbnail}
                 alt={card.title}
@@ -72,7 +78,7 @@ const WhyChooseUs = () => {
                 <h2 className="text-xl font-semibold text-gray-100 text-center mb-2">
                   {card.title}
                 </h2>
-                <p className="text-gray-400 text-center">{card.desc}</p>
+                <p className="text-gray-200 text-center">{card.desc}</p>
               </div>
             </div>
           </Button>

@@ -14,20 +14,30 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isTransparent, setIsTransparent] = useState(true);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
+    const heroSection = document.querySelector('#hero');
+    const heroHeight = heroSection?.offsetHeight || 0;
+
     const handleScroll = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 100) {
-        // Hide the navbar when scrolling down and passed 100px
         setIsVisible(false);
       } else {
-        // Show the navbar when scrolling up
         setIsVisible(true);
       }
+
+      // Check if scrolled past the Hero section
+      if (window.scrollY > heroHeight) {
+        setIsTransparent(false);
+      } else {
+        setIsTransparent(true);
+      }
+
       setLastScrollY(window.scrollY);
     };
 
@@ -39,10 +49,10 @@ const Nav = () => {
   }, [lastScrollY]);
 
   return (
-    <header
+    <header 
       className={`fixed top-0 left-0 w-full z-20 transition-transform duration-500 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
-      } bg-gradient-to-r from-[#1E293B] via-[#111827] to-[#1E293B] shadow-lg`} // Dark gradient background
+      } ${isTransparent ? 'bg-transparent' : 'bg-[#141b2d]'} transition-colors duration-300`}  
     >
       <nav className="flex justify-between items-center max-container p-4">
         <a href="/" className="bg-white">

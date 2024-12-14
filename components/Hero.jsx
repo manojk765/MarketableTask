@@ -36,9 +36,9 @@ export default function HeroSection() {
     }
   }, [])
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-[#1a223a] overflow-hidden pt-8 ">
+    <div id="hero" className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-[#1a223a] overflow-hidden pt-8 ">
       {/* <DynamicMoneyScene /> */}
-      <div className="container relative mx-auto px-10 py-10 sm:py-12">
+      <div className="container relative mx-auto px-10 py-10 sm:py-12 ">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

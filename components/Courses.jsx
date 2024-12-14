@@ -11,6 +11,7 @@ const courses = [
     image: '/assets/Demo/youtube.jpg',
     link: 'https://www.youtube.com/playlist?list=PLUUBYZiq6jSSLlkrREDMpqVIlG-JqUpyw',
     color: 'from-blue-500 to-blue-700',
+    discountPrice:'Free' 
   },
   {
     id: 2,
@@ -19,8 +20,8 @@ const courses = [
     image:'/assets/Demo/course1.jpg',
     link: 'https://marketable.graphy.com/courses/20-Days-of-Trading-65708524e4b0a38e213479f1?page=checkout&reqparams=pid%3Dp1&newCheckoutFlowParams=FREE',
     color: 'from-green-500 to-green-700',
-    originalPrice:10000,
-    discountPrice:5000 
+    originalPrice:6000,
+    discountPrice:4000 
   },
   {
     id: 3,
@@ -29,6 +30,8 @@ const courses = [
     image: '/assets/Demo/course2.jpg',
     link: 'https://marketable.graphy.com/courses/Ultimate-Trading-CourseBeginner-to-Advanced-level-MALAYALAM-65708951e4b002d28060f4ad?page=checkout&reqparams=pid%3Dp1&newCheckoutFlowParams=FREE',
     color: 'from-purple-500 to-purple-700',
+    originalPrice:5000,
+    discountPrice:3000
   },
 ]
 
